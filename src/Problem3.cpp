@@ -16,11 +16,11 @@ void Problem3::runProblem3(long long int numberToBeFactored, bool debugInfo){
 	if (debugInfo) {
 		std::cout << timeStamp() << "Root of that number is: " << rootOfNumber << std::endl;
 	}
-	
+
     long long int* primeNumberList;
     long long int listSize          = 0;
     long long int factorNumber		= numberToBeFactored;
-	long long int partialNumber		= floor(rootOfNumber+1);
+	long long int partialNumber		= (long long int)floor(rootOfNumber+1); //Square root of long long int cannot be larger than long long int.
     long long int largestFactor     = 0;
     long long int currentFactor     = 0;
     long long int numFactors        = 0;
@@ -84,11 +84,11 @@ void Problem3::runProblem3(long long int numberToBeFactored, bool debugInfo){
 char* Problem3::timeStamp(){
     //Create a timestamp
     time_t rawtime;
-    tm* timeinfo;
+    tm timeinfo;
     static char buffer [80];
     time(&rawtime);
-    timeinfo = localtime(&rawtime);
-	strftime(buffer,80,"[%Y-%m-%d %H:%M:%S] ",timeinfo);
+    localtime_s(&timeinfo, &rawtime);
+	strftime(buffer,80,"[%Y-%m-%d %H:%M:%S] ",&timeinfo);
 
 	//buffer = new char[5];
     return buffer;
@@ -105,14 +105,14 @@ long long int Problem3::sieveOfEratosthenes(long long int largestNumber, long lo
 			numberOfSegments++;
 		}
 	}
-	
+
 	//Create a temporary list to hold the partial list
 	long long int* segmentList;
 	long long int* fullList;
-	long long int* tempList; 
-	long long int segmentNum = 0;
-	long long int fullNum = 0;
-	long long int tempNum = 0;
+	long long int* tempList;
+	int segmentNum  = 0;
+	int fullNum     = 0;
+	int tempNum     = 0;
 
 	//Loop through the segments
 	if (debugInfo) {
@@ -138,7 +138,7 @@ long long int Problem3::sieveOfEratosthenes(long long int largestNumber, long lo
 		}
 		fullList = tempList;
 		fullNum  = tempNum;
-	
+
 		//Delete the temporary lists
 		if (!segmentList) {
 			delete[] segmentList;
@@ -151,10 +151,10 @@ long long int Problem3::sieveOfEratosthenes(long long int largestNumber, long lo
 
 		//Print indicator
 		if (debugInfo) {
-			std::cout << timeStamp() << "Segment " << segment << " of " << numberOfSegments << " done." << std::endl;
+			std::cout << timeStamp() << "Segment " << segment+1 << " of " << numberOfSegments << " done." << std::endl;
 		}
 	}
-	
+
 	//Assign the list of prime numbers to the supplied parameter
 	primeNumberList = fullList;
 
@@ -175,14 +175,14 @@ long long int Problem3::sieveOfEratosthenes(long long int largestNumber, long lo
 	//Return the number of primes found.
 	return fullNum;
 
-    
+
 }
 
-long long int Problem3::segmentedSieve(long long int startNumber, long long int stopNumber, long long int *&primeNumberList, bool debugInfo) {
+int Problem3::segmentedSieve(long long int startNumber, long long int stopNumber, long long int *&primeNumberList, bool debugInfo) {
 	//Create array of booleans to tell if number is prime.
-	long long int candidateSize = stopNumber - startNumber + 1;
+	int candidateSize = (int)(stopNumber - startNumber) + 1; //Segment size determines the maximum difference of these numbers.
 	bool *listOfCandidates = new bool[candidateSize];
-	
+
 	//Set all booleans to true
 	for (long long int i = 0; i < candidateSize; i++) {
 		listOfCandidates[i] = true;
@@ -210,9 +210,9 @@ long long int Problem3::segmentedSieve(long long int startNumber, long long int 
 			}
 		}
 	}
-	
+
 	//Count the number of primes
-	long long int numPrimes = 0;
+	int numPrimes = 0;
 	for (long long int i = 0; i < candidateSize; i++) {
 		if (listOfCandidates[i]) {
 			numPrimes++;
@@ -228,7 +228,7 @@ long long int Problem3::segmentedSieve(long long int startNumber, long long int 
 			posInList++;
 		}
 	}
-	
+
 	//Cleanup
 	delete[] listOfCandidates;
 

@@ -18,7 +18,7 @@ public:
 	void runProblem3(long long int numberToBeFactored, bool debugInfo = false);
 	bool isPrime(long long int number, long long int primeList[], long long int primeListSize);
 	long long int sieveOfEratosthenes(long long int largestNumber, long long int *&primeNumberList, bool debugInfo = false);
-	long long int segmentedSieve(long long int startNumber, long long int stopNumber, long long int *&primeNumberList, bool debugInfo = false);
+	int segmentedSieve(long long int startNumber, long long int stopNumber, long long int *&primeNumberList, bool debugInfo = false);
 	char* timeStamp();
 
 

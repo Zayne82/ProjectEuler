@@ -11,7 +11,7 @@ using namespace std;
 int main()
 {
 	cout << "Hello world!" << endl;
-	
+
 
 	//Problem1
 	/*Problem1 p1;
@@ -24,20 +24,21 @@ int main()
 	p2.runProblem2(4000000);
 */
 	//Problem3
-	/*Problem3 p3;
-	p3.runProblem3(13195, true);
-	p3.runProblem3(600851475143);
-*/
+	Problem3 p3;
+	//p3.runProblem3(13195, true);
+	p3.runProblem3(600851475143, true);
+
 	//Problem4
 	/*Problem4 p4;
 	p4.testProblem4();
 	p4.findLargestPalindrome(999);
 */
 	//Problem5
-	//Problem5 p5;
-	//p5.runProblem5(5, true);
-	//p5.runProblem5(10);
-	//p5.runProblem5(20);
+	/*Problem5 p5;
+	p5.runProblem5(5, true);
+	p5.runProblem5(10);
+	p5.runProblem5(20);
+*/
 
 	/*Problem6 p6;
 	p6.runProblem6(100);
