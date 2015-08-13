@@ -25,6 +25,8 @@
 				<Option type="1" />
 				<Option compiler="microsoft_visual_c_2013" />
 				<Compiler>
+					<Add option="/EHc" />
+					<Add option="/EHs" />
 					<Add option="/Ox" />
 					<Add option="/DNDEBUG" />
 				</Compiler>
@@ -33,6 +35,20 @@
 		<Compiler>
 			<Add option="/W3" />
 		</Compiler>
+		<Unit filename="ProjectEuler.cpp" />
+		<Unit filename="include/Problem1.h" />
+		<Unit filename="include/Problem2.h" />
+		<Unit filename="include/Problem3.h" />
+		<Unit filename="include/Problem4.h" />
+		<Unit filename="include/Problem5.h" />
+		<Unit filename="include/Problem6.h" />
+		<Unit filename="src/Problem1.cpp" />
+		<Unit filename="src/Problem1_old.cpp" />
+		<Unit filename="src/Problem2.cpp" />
+		<Unit filename="src/Problem3.cpp" />
+		<Unit filename="src/Problem4.cpp" />
+		<Unit filename="src/Problem5.cpp" />
+		<Unit filename="src/Problem6.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
