@@ -82,7 +82,7 @@ void Problem3::runProblem3(long long int numberToBeFactored, bool debugInfo){
 }
 
 char* Problem3::timeStamp(){
-    //Create a timestamp
+    //Create a time stamp
     time_t rawtime;
     tm timeinfo;
     static char buffer [80];
@@ -90,7 +90,7 @@ char* Problem3::timeStamp(){
     localtime_s(&timeinfo, &rawtime);
 	strftime(buffer,80,"[%Y-%m-%d %H:%M:%S] ",&timeinfo);
 
-	//buffer = new char[5];
+	//Returns the formated time stamp string.
     return buffer;
 }
 
