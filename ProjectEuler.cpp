@@ -5,6 +5,8 @@
 #include "include\Problem4.h"
 #include "include\Problem5.h"
 #include "include\Problem6.h"
+#include "include\Problem7.h"
+#include "include\Problem8.h"
 
 using namespace std;
 
@@ -24,10 +26,10 @@ int main()
 	p2.runProblem2(4000000);
 */
 	//Problem3
-	Problem3 p3;
-	//p3.runProblem3(13195, true);
+	/*Problem3 p3;
+	p3.runProblem3(13195, true);
 	p3.runProblem3(600851475143, true);
-
+*/
 	//Problem4
 	/*Problem4 p4;
 	p4.testProblem4();
@@ -43,5 +45,15 @@ int main()
 	/*Problem6 p6;
 	p6.runProblem6(100);
 */
+	//Problem7
+	/*Problem7 p7;
+	p7.runProblem7(6, true);
+	p7.runProblem7(10001, true);
+*/
+	//Problem8
+	Problem8 p8;
+	p8.runProblem8(4);
+	p8.runProblem8(13);
+
 	return 0;
 }
