@@ -7,6 +7,8 @@
 #include "include\Problem6.h"
 #include "include\Problem7.h"
 #include "include\Problem8.h"
+#include "include\Problem9.h"
+#include "include\Problem10.h"
 
 using namespace std;
 
@@ -51,9 +53,20 @@ int main()
 	p7.runProblem7(10001, true);
 */
 	//Problem8
-	Problem8 p8;
+	/*Problem8 p8;
 	p8.runProblem8(4);
 	p8.runProblem8(13);
+*/
+
+	//Problem9
+	/*Problem9 p9;
+	p9.runProblem9(12);
+	p9.runProblem9(1000);
+*/
+	//Problem10
+	Problem10 p10;
+	//p10.runProblem10(10);
+	p10.runProblem10(2000000);
 
 	return 0;
 }
